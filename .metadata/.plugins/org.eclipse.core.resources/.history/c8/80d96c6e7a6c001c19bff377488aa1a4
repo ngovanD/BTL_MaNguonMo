@@ -1,0 +1,23 @@
+package MiuMiuShop.Controller.Admin;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import MiuMiuShop.Service.HoaDonServiceImpl;
+
+@Controller
+public class HoaDonController_ {
+	
+	@Autowired
+	HoaDonServiceImpl hoaDonService;
+	
+	@RequestMapping(value = "/admin/danh-sach-don-hang")
+	public ModelAndView DanhSachHoaDon() {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("DanhSachHoaDon", hoaDonService.GetDataHoaDon());
+		mv.setViewName("admin/hoadon/danhsachdonhang");
+		return mv;
+	}
+}

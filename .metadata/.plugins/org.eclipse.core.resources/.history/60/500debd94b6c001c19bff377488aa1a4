@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/views/layouts/user/taglib.jsp"%>
+
+<body>
+	<div class="content">
+		<div style="text-align: center;" class="caption-table">Chi tiết tài khoản</div>
+
+		<div>ID: ${TaiKhoan.id }</div>
+		<div>Email: ${TaiKhoan.email }</div>
+		<div>Mật khẩu: ${TaiKhoan.matKhau }</div>
+		<div>Loại tài khoản: ${TaiKhoan.loaiTaiKhoan }</div>
+		
+         <a class="btn btn-primary btn-sm" href="#">
+             <i class="fas fa-folder">
+             </i>
+             View
+         </a>
+         <a class="btn btn-info btn-sm" href="#">
+             <i class="fas fa-pencil-alt">
+             </i>
+             Edit
+         </a>
+         <a class="btn btn-danger btn-sm" href="#">
+             <i class="fas fa-trash">
+             </i>
+             Delete
+         </a>
+
+		<a
+			href="<c:url value='/admin/chi-tiet-tai-khoan/${ TaiKhoan.id}/chinh-sua'/>">Chỉnh
+			sửa</a> <a
+			href="<c:url value='/admin/chi-tiet-tai-khoan/${ TaiKhoan.id}/xoa'/>">Xóa</a>
+	</div>
+</body>

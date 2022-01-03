@@ -1,0 +1,13 @@
+package MiuMiuShop.Service;
+
+import org.springframework.stereotype.Service;
+
+import MiuMiuShop.Entity.TaiKhoan;
+
+@Service
+public interface ITaiKhoanService {
+	public int KiemTraTaiKhoanUser(String email, String matKhau);
+	public String LayHoTenTaiKhoanByEmail(String email);
+	public int TaoTaiKhoanUser(String hoTen, String email, String matKhau);
+	public int GetIdTaiKhoanByEmail(TaiKhoan taiKhoan);
+}

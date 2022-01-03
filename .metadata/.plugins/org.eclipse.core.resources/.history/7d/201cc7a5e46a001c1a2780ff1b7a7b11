@@ -1,0 +1,71 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/views/layouts/user/taglib.jsp"%>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/views/layouts/user/taglib.jsp"%>
+
+<!-- Checkout Section Begin -->
+    <section class="checkout spad">
+        <div class="container">
+            <div class="checkout__form">
+                <h4>Thông tin thanh toán</h4>
+                <form:form action="dat-hang/xac-nhan" class="form-pay" modelAttribute="thongTinKhachHangDat">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-6">
+                            <div class="checkout__input">
+                                <p>Họ tên:<span></span></p>
+                            </div>
+                            <div class="checkout__input">
+                                <p>Địa chỉ:<span>*</span></p>
+                            </div>
+                            <div class="checkout__input">
+                                <p>Số điện thoại:<span>*</span></p>
+                            </div>
+                        </div>         
+                    </div>
+                </form:form>
+                <table>
+                            <thead>
+                                <tr>
+                                    <th class="shoping__product">Sản phẩm</th>
+                                    <th>Giá</th>
+                                    <th>Số lượng</th>
+                                    <th>Tổng tiền</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            	<c:forEach var="item" items="${GioHang }">
+                            	 	 <tr>
+	                                    <td class="shoping__cart__item">
+	                                        <img src="<c:url value='/assets/user/img/sanpham/${item.value.sanPham.sanPham.hinhAnh }'/>" width="50px" alt="">
+	                                        <h5>${item.value.sanPham.sanPham.tenSanPham}</h5>
+	                                    </td>
+	                                    <td class="shoping__cart__price">
+	                                        ${item.value.sanPham.sanPham.gia}
+	                                    </td>
+	                                    <td class="shoping__cart__quantity">
+	                                        <div class="quantity">
+	                                            <div class="pro-qty">
+	                                            	<a href="<c:url value='/BotSanPham/${item.value.sanPham.sanPham.maSanPham }'/>" class="dec qtybtn">-</a>
+	                                                <input type="text" value="${item.value.soLuong}">
+	                                              	<a href="<c:url value='/ThemSanPham/${item.value.sanPham.sanPham.maSanPham }'/>" class="dec qtybtn">+</a>
+	                                            </div>
+	                                        </div>
+	                                    </td>
+	                                    <td class="shoping__cart__total">
+	                                        ${item.value.sanPham.sanPham.gia*item.value.soLuong}
+	                                    </td>
+	                                    <td class="shoping__cart__item__close">
+	                                        <a href="<c:url value='/XoaSanPham/${item.value.sanPham.sanPham.maSanPham }'/>" class="icon_close" style="font-size: 30px"></a>
+	                                    </td>
+	                                </tr>
+                            	</c:forEach>
+                            </tbody>
+                        </table>
+            </div>
+        </div>
+    </section>
+    <!-- Checkout Section End -->

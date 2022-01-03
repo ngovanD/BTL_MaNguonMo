@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SpringMVC&apos; to &apos;BTL_SpringMVC&apos;" description="Rename resource &apos;SpringMVC&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/SpringMVC" name="BTL_SpringMVC" stamp="1639037756629" updateReferences="true"/>
+</session>

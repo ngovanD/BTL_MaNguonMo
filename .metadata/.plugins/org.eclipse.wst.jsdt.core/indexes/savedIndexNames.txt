@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+F:\Download\Homework\ki7\PhanMemMaNguonMo\BTL\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+140305831.index
+1978867256.index
+1910587549.index
+2863229333.index
+284282225.index
+3024760051.index
+3802313031.index

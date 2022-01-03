@@ -1,0 +1,100 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/views/layouts/user/taglib.jsp"%>
+    
+      <!-- Preloader -->
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-dark">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+
+      <!-- Messages Dropdown Menu -->
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          ADMIN
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          Đăng xuất
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link">
+              <p>
+                Thống kê
+              </p>
+            </a>
+          </li>
+          <li class="nav-item menu-open">
+            <a href="<c:url value='/chi-tiet-san-pham/${item.maSanPham }'/>" class="nav-link">
+              <p>
+                Quản lý người dùng
+              </p>
+            </a>
+          </li>
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link">
+              <p>
+                Quản lý đơn hàng
+              </p>
+            </a>
+          </li>
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link">
+              <p>
+                Quản lý slide-banner
+              </p>
+            </a>
+          </li>
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link">
+              <p>
+                Quản lý sản phẩm
+              </p>
+            </a>
+          </li>
+           <li class="nav-item menu-open">
+            <a href="#" class="nav-link">
+              <p>
+                Quản lý loại sản phẩm
+              </p>
+            </a>
+          </li>
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link">
+              <p>
+                Quản lý thông tin shop
+              </p>
+            </a>
+          </li>
+          
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+    

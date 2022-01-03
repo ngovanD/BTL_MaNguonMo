@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;thongTinLienHeShop&apos; in &apos;MiuMiuShop.Entity.MapperThongTinShop.mapRow(...)&apos; to &apos;thongTinShop&apos;&#x0D;&#x0A;- Original project: &apos;BTL_SpringMVC&apos;&#x0D;&#x0A;- Original element: &apos;MiuMiuShop.Entity.MapperThongTinShop.mapRow(ResultSet, int).thongTinLienHeShop&apos;&#x0D;&#x0A;- Renamed element: &apos;thongTinLienHeShop&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;thongTinLienHeShop&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;MiuMiuShop.Entity{MapperThongTinShop.java[MapperThongTinShop~mapRow~QResultSet;~I@thongTinLienHeShop!181!233!194!211!QThongTinShop;!0!false" name="thongTinShop" references="true" stamp="1639651156551" version="1.0"/>
+</session>

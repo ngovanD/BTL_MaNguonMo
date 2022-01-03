@@ -1,0 +1,51 @@
+package MiuMiuShop.Dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import MiuMiuShop.Entity.LoaiSanPham;
+import MiuMiuShop.Entity.MapperLoaiSanPham;
+
+@Repository
+public class LoaiSanPhamDao extends BaseDao{
+
+	public List<LoaiSanPham> GetDataLoaiSanPham()
+	{
+		List<LoaiSanPham> list = new ArrayList<LoaiSanPham>();
+		String sql = "SELECT * FROM LoaiSanPham";
+		list = _jdbcTemplate.query(sql, new MapperLoaiSanPham());
+		return list;
+	}
+	
+	public LoaiSanPham LayLoaiSanPhamTheoID(int id)
+	{
+		List<LoaiSanPham> list = new ArrayList<LoaiSanPham>();
+		String sql = "SELECT * FROM LoaiSanPham WHERE MaLoaiSanPham =" + id;
+		list = _jdbcTemplate.query(sql, new MapperLoaiSanPham());
+		return list.get(0);
+	}
+	
+	public int ThemLoaiSanPham(LoaiSanPham loaiSanPham)
+	{
+		String sql = "INSERT INTO LoaiSanPham VALUES(N'"+loaiSanPham.getTenLoaiSanPham()+"')";
+		int check = _jdbcTemplate.update(sql);
+		return check;
+	}
+	
+	public int SuaLoaiSanPham(int id, LoaiSanPham loaiSanPham)
+	{
+		String sql = "UPDATE LoaiSanPham SET TenLoaiSanPham = N'" + loaiSanPham.getTenLoaiSanPham() +"'";
+		int check = _jdbcTemplate.update(sql);
+		return check;
+	}
+	
+	public int XoaLoaiSanPham(int id)
+	{
+		String sql = "DELETE FROM LoaiSanPham "
+				+ "WHERE MaLoaiSanPham = " + id;
+		int check = _jdbcTemplate.update(sql);
+		return check;
+	}
+}

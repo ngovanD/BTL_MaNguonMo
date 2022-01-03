@@ -1,0 +1,10 @@
+package MiuMiuShop.Entity;
+
+public class MapperLoaiSanPham {
+	public LoaiSanPham mapRow(ResultSet rs, int rowNum) throws SQLException {
+		LoaiSanPham loaiSanPham = new LoaiSanPham();
+		loaiSanPham.setMaLoaiSanPham(rs.getInt("MaLoaiSanPham"));
+		loaiSanPham.setTenLoaiSanPham(rs.getString("TenLoaiSanPham"));
+		return loaiSanPham;
+	}
+}

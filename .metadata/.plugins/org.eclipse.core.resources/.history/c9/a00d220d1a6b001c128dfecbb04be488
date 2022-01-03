@@ -1,0 +1,63 @@
+package MiuMiuShop.Dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import MiuMiuShop.Entity.MapperTaiKhoan;
+import MiuMiuShop.Entity.TaiKhoan;
+
+@Repository
+public class TaiKhoanDao extends BaseDao {
+	public int KiemTraTaiKhoanUser(String email, String matKhau) {
+		List<TaiKhoan> result = new ArrayList<TaiKhoan>();
+		String sql = "SELECT * FROM TaiKhoan " + "WHERE LoaiTaiKhoan = 'User'" + "AND Email = '" + email + "' "
+				+ "AND MatKhau = '" + matKhau + "'";
+		result = _jdbcTemplate.query(sql, new MapperTaiKhoan());
+		if (result.size() <= 0) {
+			return 0;
+		}
+		return 1;
+	}
+
+	public String LayHoTenTaiKhoanByEmail(String email) {
+		List<TaiKhoan> result = new ArrayList<TaiKhoan>();
+		String sql = "SELECT * FROM TaiKhoan " + "WHERE LoaiTaiKhoan = 'User'" + "AND Email = '" + email + "' ";
+		result = _jdbcTemplate.query(sql, new MapperTaiKhoan());
+		return result.get(0).getHoTen();
+	}
+
+	public int TaoTaiKhoanUser(String hoTen, String email, String matKhau) {
+		// TODO Auto-generated method stub
+		String sql = "INSERT INTO TaiKhoan VALUES('" + email + "', N'" + hoTen + "', '" + matKhau + "', 'User')";
+		int result = 0;
+		try {
+			result = _jdbcTemplate.update(sql);
+		} catch (Exception e) {
+			return 0;
+		}
+		return result;
+	}
+	
+	public int GetIdTaiKhoanByEmail(TaiKhoan taiKhoan)
+	{
+		List<TaiKhoan> result = new ArrayList<TaiKhoan>();
+		String sql = "SELECT TOP 1 * FROM TaiKhoan " 
+				+ "WHERE Email = '" + taiKhoan.getEmail() +"'";
+		result = _jdbcTemplate.query(sql, new MapperTaiKhoan());
+		if(result.size() <= 0 )
+		{
+			return -1;
+		}
+		return result.get(0).getId();
+	}
+	
+	public TaiKhoan GetTaiKhoanByEmail(String email)
+	{
+		List<TaiKhoan> result = new ArrayList<TaiKhoan>();
+		String sql = "SELECT * FROM TaiKhoan " + "WHERE LoaiTaiKhoan = 'User'" + "AND Email = '" + email + "' ";
+		result = _jdbcTemplate.query(sql, new MapperTaiKhoan());
+		return result.get(0);
+	}
+}

@@ -1,0 +1,10 @@
+1641010764591	Rename field 'maLienHe_KhachHang'
+1641012874832	Rename field 'thongTinLienHe_KhachHangService'
+1641013831742	Rename type 'ChiTietHoaDon'
+1641013885558	Rename compilation unit 'ChiTietHoaDonController.java'
+1641014009654	Rename type 'ChiTietHoaDonService'
+1641027042876	Move 'chitietdonhang.jsp' to 'user'
+1641048120007	Delete element
+1641053130509	Move 'admin.jsp' to 'layouts'
+1641053690121	Move 'index.jsp' to 'admin'
+1641053865374	Rename type 'SanPhamController'

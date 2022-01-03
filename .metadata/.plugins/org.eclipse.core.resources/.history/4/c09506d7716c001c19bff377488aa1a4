@@ -1,0 +1,14 @@
+package MiuMiuShop.Service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import MiuMiuShop.Dto.SanPhamDto;
+
+@Service
+public interface ILoaiSanPhamService {
+	public List<SanPhamDto> LayDanhSachSanPhamCungLoaiByID(int id);
+	public List<SanPhamDto> GetDataSanPhamPaginate(int start, int end);
+	public List<SanPhamDto> GetDataSanPhamPaginateById(int id, int start, int end);
+}

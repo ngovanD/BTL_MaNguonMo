@@ -1,0 +1,67 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/views/layouts/user/taglib.jsp"%>
+
+<!-- Checkout Section Begin -->
+    <section class="checkout spad">
+        <div class="container">
+            <div class="checkout__form">
+                <h4>Thông tin thanh toán</h4>
+                <form:form action="dat-hang/xac-nhan" class="form-pay" modelAttribute="thongTinKhachHangDat">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-6">
+                        <div class="checkout__input">
+                                <p>Mã hóa đơn:<span>  ${HoaDon.maHoaDon }</span></p>
+                            </div>
+                            <div class="checkout__input">
+                                <p>Ngày lập:<span>  ${HoaDon.ngayLapHoaDon }</span></p>
+                            </div>
+                            <div class="checkout__input">
+                                <p>Trạng thái:<span>  ${HoaDon.trangThai }</span></p>
+                            </div>
+                            <div class="checkout__input">
+                                <p>Họ tên:<span>  ${ThongTinKhachHangDat.hoTen }</span></p>
+                            </div>
+                            <div class="checkout__input">
+                                <p>Địa chỉ:<span>  ${ThongTinKhachHangDat.diaChi }</span></p>
+                            </div>
+                            <div class="checkout__input">
+                                <p>Số điện thoại:<span>  ${ThongTinKhachHangDat.soDienThoai }</span></p>
+                            </div>
+                        </div>         
+                    </div>
+                </form:form>
+                <table style="border-spacing: 15px;">
+                      <thead>
+                          <tr>
+                              <th >Sản phẩm</th>
+                              <th>Giá</th>
+                              <th>Số lượng</th>
+                              <th>Thành tiền</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                      	<c:forEach var="item" items="${DongHoaDon }">
+                      	 	 <tr>
+                               <td >
+                                   ${item.sanPham.sanPham.tenSanPham}
+                               </td>
+                               <td >
+                                   ${item.sanPham.sanPham.gia}
+                               </td>
+                               <td >
+                                   ${item.soLuong}
+                               </td>
+                               <td >
+                                   ${item.sanPham.sanPham.gia*item.soLuong}
+                               </td>
+                           </tr>
+                      	</c:forEach>
+                      </tbody>
+                  </table>
+                  
+                  <p> Tổng tiền hóa đơn: ${HoaDon.tongTien } VND</p>
+            </div>
+        </div>
+    </section>
+    <!-- Checkout Section End -->
